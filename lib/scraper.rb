@@ -25,6 +25,7 @@ class Scraper
 
   def self.scrape_profile_page(profile_url)
     profile_page = Nokogiri::HTML(open(profile_url))
+    collection = []
     profile_page.css(".social-icon-container a").each do |profile|
       student_hash = {} #exists inside the iteration scope only
       link = profile.attributes["href"].value
