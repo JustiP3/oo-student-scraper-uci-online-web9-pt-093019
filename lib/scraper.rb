@@ -9,7 +9,7 @@ class Scraper
     collection = [] #collection of each student hash
     index_page.css("div.roster-cards-container").each do |card|
       card.css(".student-card a").each do |student|
-        link = student.attributs["href"].value
+        link = student.attributes["href"].value
         name = student.css(".student-name").text
         location = student.css(".stuent-location").text
         student_hash = {
