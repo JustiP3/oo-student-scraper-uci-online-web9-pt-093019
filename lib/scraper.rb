@@ -39,7 +39,7 @@ class Scraper
         student_hash[:blog] = link
       end
     end
-    bio = profile_page.css("div.bio-content.content-holder div.description-holder p").text 
+    bio = profile_page.css("div.bio-content.content-holder div.description-holder p").text
     quote = profile_page.css("div.vitals-text-container div.profile-quote").text
     binding.pry
     student_hash
