@@ -6,7 +6,7 @@ class Scraper
   def self.scrape_index_page(index_url)
     index_page = Nokogiri::HTML(open(index_url))
     student_hash = {}
-    profile_page.css(".social-icon-container a").each do |profile|
+    index_page.css(".social-icon-container a").each do |profile|
       link = profile.attributes["href"].value
       if link.include?("twitter")
         student_hash[:twitter] = link
