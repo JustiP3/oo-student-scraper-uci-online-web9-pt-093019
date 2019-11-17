@@ -25,9 +25,9 @@ class Scraper
 
   def self.scrape_profile_page(profile_url)
     profile_page = Nokogiri::HTML(open(profile_url))
-    collection = []
-    profile_page.css(".social-icon-container a").each do |profile|
-      student_hash = {} #exists inside the iteration scope only
+    student_hash = {} 
+    
+    profile_page.css(".social-icon-container a").each do |profile|  
       link = profile.attributes["href"].value
       if link.include?("twitter")
         student_hash[:twitter] = link
@@ -37,10 +37,9 @@ class Scraper
         student_hash[:github] = link
       else
         student_hash[:blog] = link
-      end
-      collection << student_hash
-    end
-    collection
+      end    
+    end    
+    student_hash 
   end
 
 
