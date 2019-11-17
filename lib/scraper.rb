@@ -8,18 +8,19 @@ class Scraper
     index_page = Nokogiri::HTML(open(index_url))
     collection = [] #collection of each student hash
 #  {:name => "Abby Smith", :location => "Brooklyn, NY", :profile_url => "students/abby-smith.html"}
-    index_page.css("div roster-cards-container").each do |card|
-      link = student.attributs["href"].value
-      name = student.css(".student-name").text
-      location = student.css(".stuent-location").text
-      student_hash = {
-        :name => name,
-        :location => location,
-        :profile_url => link
-      }
+    index_page.css("div.roster-cards-container").each do |card|
+      card.css(".stuent-card a").each do |student|
+        link = student.attributs["href"].value
+        name = student.css(".student-name").text
+        location = student.css(".stuent-location").text
+        student_hash = {
+          :name => name,
+          :location => location,
+          :profile_url => link
+        }
       collection << student_hash
     end
-
+  end
   collection
   end
 
