@@ -5,9 +5,9 @@ class Scraper
 
   def self.scrape_index_page(index_url)
     index_page = Nokogiri::HTML(open(index_url))
-    collection = []
-    student_hash = {}
+    collection = [] #collection of each student hash
     index_page.css(".social-icon-container a").each do |profile|
+      student_hash = {} #exists inside the iteration scope only
       link = profile.attributes["href"].value
       if link.include?("twitter")
         student_hash[:twitter] = link
