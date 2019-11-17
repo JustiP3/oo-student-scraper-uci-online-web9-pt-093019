@@ -5,7 +5,8 @@ class Student
   @@all = []
 
   def initialize(student_hash)
-    student_hash.each {|key, value| self.send("#{attribute}=", value)}
+  #  attributes.each {|key, value| self.send(("#{key}="), value)} - metaprogramming
+    student_hash.each {|key, value| self.send(("#{key}="), value)}
     @@all << self
   end
 
