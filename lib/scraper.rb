@@ -11,7 +11,7 @@ class Scraper
       card.css(".student-card a").each do |student|
         link = student.attributes["href"].value
         name = student.css(".student-name").text
-        location = student.css(".stuent-location").text
+        location = student.css(".student-location").text
         student_hash = {
           :name => name,
           :location => location,
