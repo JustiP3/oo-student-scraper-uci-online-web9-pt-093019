@@ -41,8 +41,8 @@ class Scraper
     end
     bio = profile_page.css("div.bio-content.content-holder div.description-holder p").text
     quote = profile_page.css("div.vitals-text-container div.profile-quote").text
-    binding.pry
-    student_hash
+    student_hash[:profile_quote] = quote 
+    student_hash[:bio] = bio 
   end
 
 
