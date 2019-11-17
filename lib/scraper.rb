@@ -19,9 +19,9 @@ class Scraper
       }
       collection << student_hash
     end
-  end
+
   collection
-end
+  end
 
   def self.scrape_profile_page(profile_url)
     index_page.css(".social-icon-container a").each do |profile|
@@ -41,6 +41,6 @@ end
 
     collection
   end
-  end
+  
 
 end
