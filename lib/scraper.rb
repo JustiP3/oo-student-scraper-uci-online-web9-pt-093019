@@ -37,8 +37,11 @@ class Scraper
         student_hash[:github] = link
       else
         student_hash[:blog] = link
-      end
+      end      
     end
+    bio = profile_page.css("div.bio-content.content-holder div.description-holder p")
+
+    binding.pry 
     student_hash
   end
 
