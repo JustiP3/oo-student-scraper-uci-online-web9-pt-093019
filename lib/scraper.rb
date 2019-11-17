@@ -18,7 +18,7 @@ class Scraper
         :profile_url => link
       }
       collection << student_hash
-
+    end
   end
   collection
 end
