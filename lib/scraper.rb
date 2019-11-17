@@ -5,6 +5,7 @@ class Scraper
 
   def self.scrape_index_page(index_url)
     index_page = Nokogiri::HTML(open(index_url))
+    collection = []
     student_hash = {}
     index_page.css(".social-icon-container a").each do |profile|
       link = profile.attributes["href"].value
@@ -17,8 +18,9 @@ class Scraper
       else
         student_hash[:blog] = link
       end
+      collection << student_hash
     end
-    student_hash
+    collection
   end
 
   def self.scrape_profile_page(profile_url)
