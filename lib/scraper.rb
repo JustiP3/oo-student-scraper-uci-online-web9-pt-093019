@@ -41,6 +41,6 @@ class Scraper
 
     collection
   end
-  
+
 
 end
