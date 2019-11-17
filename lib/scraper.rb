@@ -23,24 +23,23 @@ class Scraper
   collection
   end
 
-  def self.scrape_profile_page(profile_url)
-    index_page.css(".social-icon-container a").each do |profile|
-      student_hash = {} #exists inside the iteration scope only
-      link = profile.attributes["href"].value
-      if link.include?("twitter")
-        student_hash[:twitter] = link
-      elsif link.include?("linkedin")
-        student_hash[:linkedin] = link
-      elsif link.include?("github")
-        student_hash[:github] = link
-      else
-        student_hash[:blog] = link
-      end
-      collection << student_hash
-    end
+#  def self.scrape_profile_page(profile_url)
+#    index_page.css(".social-icon-container a").each do |profile|
+#      student_hash = {} #exists inside the iteration scope only
+#      link = profile.attributes["href"].value
+#      if link.include?("twitter")
+#        student_hash[:twitter] = link
+#      elsif link.include?("linkedin")
+#        student_hash[:linkedin] = link
+#      elsif link.include?("github")
+#        student_hash[:github] = link
+#      else
+#        student_hash[:blog] = link
+#      end
+#      collection << student_hash
+#    end
+##    collection
+#end
 
-    collection
-  end
 
-
-end
+end #end of class
