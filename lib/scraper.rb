@@ -9,16 +9,16 @@ class Scraper
     profile_page.css(".social-icon-container a").each do |profile|
       link = profile.attributes["href"].value
       if link.include?("twitter")
-        student_hash[:twitter] = link 
+        student_hash[:twitter] = link
       elsif link.include?("linkedin")
         student_hash[:linkedin] = link
       elsif link.include?("github")
-        student_hash[:github] = link 
+        student_hash[:github] = link
       else
-        student_hash[:blog] = link 
-      end 
-    end 
-    student_hash 
+        student_hash[:blog] = link
+      end
+    end
+    student_hash
   end
 
   def self.scrape_profile_page(profile_url)
